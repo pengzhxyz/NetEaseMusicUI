@@ -1,0 +1,53 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NetEaseMusicUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="using:ZhangPeng.Controls" x:Name="userControl"
+    x:Class="NetEaseMusicUI.Controls.PaneMessagePanel"
+    mc:Ignorable="d"
+    d:DesignHeight="55"
+    d:DesignWidth="180" Background="White"
+    >
+
+    <Grid x:Name="relativePanel" BorderThickness="{Binding BorderThickness, ElementName=userControl}" >
+        <Grid.BorderBrush>
+            <SolidColorBrush Color="{StaticResource BorderColor}"/>
+        </Grid.BorderBrush>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource SideBackColor}"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse Width="25" Height="25" x:Name="image" Margin="12" Grid.RowSpan="3" VerticalAlignment="Center">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="http://ww3.sinaimg.cn/mw690/c260f7abjw1f13j9naow7j20qo0zkn4s.jpg" Stretch="UniformToFill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock x:Name="name" Text="听见好时光" FontSize="12" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="image" MaxWidth="70" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Column="1" VerticalAlignment="Center" Grid.RowSpan="3">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{StaticResource MainTextColor}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Controls:PureButton x:Name="messageBT"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" FontSize="13.333" RelativePanel.LeftOf="settingsBT" RelativePanel.AlignVerticalCenterWithPanel="True" Content="&#xE715;" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="2" Grid.RowSpan="3" Padding="8,12" >
+            <Controls:PureButton.Foreground>
+                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+            </Controls:PureButton.Foreground>
+        </Controls:PureButton>
+        <Controls:PureButton x:Name="settingsBT" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="13.333" RelativePanel.AlignVerticalCenterWithPanel="True" Content="&#xE713;" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="3" Grid.RowSpan="3" Padding="8,12">
+            <Controls:PureButton.Foreground>
+                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+            </Controls:PureButton.Foreground>
+        </Controls:PureButton>
+    </Grid>
+</UserControl>

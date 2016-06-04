@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="NetEaseMusicUI.Controls.MenuItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NetEaseMusicUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="60"
+    d:DesignWidth="400">
+
+    <StackPanel Orientation="Horizontal">
+        <SymbolIcon Symbol="MusicInfo" x:Name="icon" Margin="2,0,14,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <SymbolIcon.RenderTransform>
+                <CompositeTransform ScaleX="0.7" ScaleY="0.7"/>
+            </SymbolIcon.RenderTransform>
+            <SymbolIcon.Foreground>
+                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+            </SymbolIcon.Foreground>
+        </SymbolIcon>
+        <TextBlock Text="我的音乐" x:Name="menuNameTB" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="12">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+    </StackPanel>
+</UserControl>

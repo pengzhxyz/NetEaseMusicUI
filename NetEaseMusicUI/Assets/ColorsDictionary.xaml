@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:NetEaseMusicUI.ViewModel"
+    xmlns:local="using:NetEaseMusicUI.Assets"
+    >
+    <!--Global View Model Locator-->
+    <vm:ViewModelLocator x:Key="Locator"/>
+    <Color x:Key="MainColor" >#FFdf3b3b</Color>
+    <Color x:Key="MainTitleColor" >#FFBC2F2E</Color>
+    
+    <Color x:Key="MainBackColor" >#FFfafafc</Color>
+    <Color x:Key="SideBackColor" >#FFf3f3f5</Color>
+
+    <Color x:Key="BorderColor" >#FFe9e9eb</Color>
+    
+    <Color x:Key="MainTextColor" >#FF333333</Color>
+    <Color x:Key="HeavyTextColor" >#FF000000</Color>
+    <Color x:Key="SubTextColor1" >#FF666666</Color>
+    <Color x:Key="SubTextColor2" >#FF969696</Color>
+
+    <Color x:Key="SelectedColor" >#FFB8B8C2</Color>
+    <Color x:Key="PointOverColor" >#FFeeeef2</Color>
+    <Color x:Key="SelectedPressedColor" >#FFceced2</Color>
+
+</ResourceDictionary>

@@ -1,0 +1,172 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NetEaseMusicUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="using:ZhangPeng.Controls"
+    xmlns:nmc="using:NetEaseMusicUI.Controls"
+    x:Class="NetEaseMusicUI.Controls.PlayBar"
+    mc:Ignorable="d"
+    >
+
+    <Grid x:Name="RootGrid">
+        <nmc:PlayingView x:Name="PlayingView"/>
+        <Grid x:Name="PlayBarGrid" Height="60" VerticalAlignment="Bottom">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource MainBackColor}"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+
+            </Grid.ColumnDefinitions>
+            
+            <Image x:Name="coverImage" Source="ms-appx:///Assets/Images/cover_qilixiang.jpg" Stretch="UniformToFill" Height="60" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Width="60"/>
+            <StackPanel Margin="30,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Controls:PureButton x:Name="previouBT" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="0" MinWidth="3" Margin="0" d:LayoutOverrides="Height">
+                    <Border Height="24" Margin="0,0,0,0" Width="24" CornerRadius="12" >
+                        <Border.Background>
+                            <SolidColorBrush Color="{StaticResource MainColor}"/>
+                        </Border.Background>
+                        <Path Data="M0,0L6.8219922,0 6.8219922,16 25.37,0.74398804 25.37,16.001007 25.37,31.259003 6.8219922,16.001007 6.8219922,32 0,32z" Stretch="Uniform" Fill="#FFFFFFFF" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Width="12" Height="12">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Border>
+                </Controls:PureButton>
+                <Controls:PureButton x:Name="playBT" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="0" MinWidth="3" Margin="20,0">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30" CornerRadius="15" >
+                        <Border.Background>
+                            <SolidColorBrush Color="{StaticResource MainColor}"/>
+                        </Border.Background>
+                        <Path Data="M0,0L25.194,16 0,32z" Stretch="Uniform" Fill="#FFFFFFFF" Width="12" Height="12" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <CompositeTransform TranslateX="1"/>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Border>
+                    <!--<SymbolIcon Symbol="Play" RenderTransformOrigin="0.5,0.5">
+                        <SymbolIcon.RenderTransform>
+                            <CompositeTransform TranslateX="2"/>
+                        </SymbolIcon.RenderTransform>
+                        <SymbolIcon.Foreground>
+                            <SolidColorBrush Color="{StaticResource MainBackColor}"/>
+                        </SymbolIcon.Foreground>
+                    </SymbolIcon>-->
+                </Controls:PureButton>
+                <Controls:PureButton x:Name="nextBT" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="0" MinWidth="3" Margin="0" d:LayoutOverrides="Height">
+
+                    <Border Height="24" Margin="0,0,0,0" Width="24" CornerRadius="12" >
+                        <Border.Background>
+                            <SolidColorBrush Color="{StaticResource MainColor}"/>
+                        </Border.Background>
+
+                        <Path Data="M0,0.74398804L18.548009,16.001984 0,31.259003 0,16.001984z M18.548009,0L25.370002,0 25.370002,32 18.548009,32 18.548009,16.001984z" Stretch="Uniform" Fill="#FFFFFFFF" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Width="12" Height="12">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Border>
+                </Controls:PureButton>
+            </StackPanel>
+            <Grid Grid.Column="2" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="31*"/>
+                </Grid.RowDefinitions>
+                <Slider Margin="0" VerticalAlignment="Top" Grid.Row="1" Value="50" Style="{StaticResource SliderStyle_Music}">
+                    <Slider.Background>
+                        <SolidColorBrush Color="{StaticResource SubTextColor2}"/>
+                    </Slider.Background>
+                </Slider>
+                <StackPanel HorizontalAlignment="Left" Margin="0,4,0,0" Orientation="Horizontal" d:LayoutOverrides="Height" VerticalAlignment="Center">
+                    <TextBlock x:Name="textBlock1" Margin="0" TextWrapping="Wrap" Text="七里香" d:LayoutOverrides="Width" FontSize="13.333">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource MainTextColor}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock2" Margin="4,0" TextWrapping="Wrap" Text="-" d:LayoutOverrides="Width" FontSize="13.333">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock3" Margin="0" TextWrapping="Wrap" Text="周杰伦" d:LayoutOverrides="Width" FontSize="13.333">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Margin="0,5,0,0" Orientation="Horizontal" d:LayoutOverrides="Height" VerticalAlignment="Center">
+                    <TextBlock x:Name="textBlock4" Margin="0" TextWrapping="Wrap" Text="02:25" d:LayoutOverrides="Width" FontSize="12">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock5" Margin="4,0" TextWrapping="Wrap" Text="/ " d:LayoutOverrides="Width" FontSize="12">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor2}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock6" Margin="0" TextWrapping="Wrap" Text="04:25" d:LayoutOverrides="Width" FontSize="12">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor2}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+            <StackPanel Margin="12,0,0,0" Grid.Column="3" Orientation="Horizontal" d:LayoutOverrides="TopPosition, BottomPosition">
+                <Controls:PureButton x:Name="pureButton3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="12,0" MinWidth="3" Margin="0" Height="24">
+                    <Path Data="M23.370204,1.8672515C21.294372,1.9053352,18.976663,2.8856077,16.599092,4.7651081L16.015115,5.2261047 15.432115,4.7651081C13.059161,2.8901167 10.673175,1.9241176 8.5431991,1.9241178 7.446229,1.9241176 6.416244,2.1801283 5.4912381,2.6991081 2.9072883,4.1470995 1.5222969,7.4460959 1.9643076,11.100071 2.7172883,17.337043 13.615153,26.253016 16.02012,28.020984 18.452095,26.261012 29.497936,17.341041 30.063938,11.128086 30.415924,7.2730923 29.013935,4.0011039 26.406974,2.5891233 25.478523,2.0858686 24.457546,1.8473029 23.370204,1.8672515z M23.381185,0.0013699633C24.778831,-0.02325648 26.102981,0.28400741 27.302959,0.93312485 30.582914,2.7111013 32.359897,6.6820917 31.938913,11.299075 31.216907,19.22305 17.355093,29.538983 16.454105,29.984996L16.093116,30.221993 15.972116,30.219003 15.599104,29.995982C14.876123,29.658977 1.0503184,19.237027 0.09433749,11.32709 -0.43867542,6.9110947 1.3183202,2.8801069 4.5712676,1.0571169 7.8332172,-0.77685892 11.97516,-0.11887239 16.015115,2.8441267 18.518211,1.0053749 21.051775,0.042413725 23.381185,0.0013699633z" Stretch="Uniform" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                        </Path.Fill>
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="0" />
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Controls:PureButton>
+                <Controls:PureButton x:Name="pureButton3_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="12,0" MinWidth="3" Margin="0,18" Height="24" FontFamily="Segoe MDL2 Assets">
+                    <SymbolIcon Symbol="Shuffle">
+                        <SymbolIcon.Foreground>
+                            <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                        </SymbolIcon.Foreground>
+                    </SymbolIcon>
+                </Controls:PureButton>
+                <Controls:PureButton x:Name="pureButton3_Copy1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="12,0" MinWidth="3" Margin="0,18" Height="24" FontFamily="Segoe MDL2 Assets" Content="&#xE767;">
+                    <Controls:PureButton.Foreground>
+                        <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                    </Controls:PureButton.Foreground>
+                </Controls:PureButton>
+                <Controls:PureButton x:Name="pureButton3_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource PureButtonStyle_Small}" Padding="12,0,24,0" MinWidth="3" Margin="0" Height="24">
+                    <StackPanel Margin="-0.4,-0.4,0.4,0.4" Orientation="Horizontal" d:LayoutOverrides="Height">
+                        <SymbolIcon Symbol="MusicInfo" Height="20" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
+                            <SymbolIcon.Foreground>
+                                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                            </SymbolIcon.Foreground>
+                        </SymbolIcon>
+                        <Border VerticalAlignment="Center" Margin="2,0,0,0" d:LayoutOverrides="Width" CornerRadius="5">
+                            <Border.Background>
+                                <SolidColorBrush Color="{StaticResource SubTextColor1}"/>
+                            </Border.Background>
+                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="20" FontSize="12" Foreground="White" Margin="2,-1,2,0"/>
+                        </Border>
+                    </StackPanel>
+                </Controls:PureButton>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>
