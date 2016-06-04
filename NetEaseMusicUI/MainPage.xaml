@@ -63,7 +63,7 @@ xmlns:zpc="using:ZhangPeng.Controls"
                     </VisualState.Setters>
                 </VisualState>-->
             </VisualStateGroup>
-            <!--<VisualStateGroup>
+            <VisualStateGroup>
                 <VisualState x:Name="PaneOpenState">
                     <VisualState.StateTriggers>
                         <StateTrigger IsActive="{Binding IsPaneOpen, ElementName=RootSplitView}" />
@@ -84,7 +84,7 @@ xmlns:zpc="using:ZhangPeng.Controls"
                         <Setter Target="mymusicListView.Visibility" Value="Collapsed"/>
                     </VisualState.Setters>
                 </VisualState>
-            </VisualStateGroup>-->
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <SplitView x:Name="RootSplitView"                    
 			DisplayMode="CompactInline"
